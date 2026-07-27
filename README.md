@@ -1,42 +1,61 @@
-# vue-udemy
 
-This template should help get you started developing with Vue 3 in Vite.
+## Learn Vue.js 3 by building 7 real-world applications — from scratch to production-ready — and gain the skills top companies actively seek.
 
-## Recommended IDE Setup
+If you want to become a job-ready frontend developer in 2025, you need more than theory — you need projects that prove your skills. This course focuses 100% on Vue 3 with the Composition API, the modern standard companies actually use, so you’ll be prepared for the real job market and advanced technical interviews anywhere in the world.  
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### What you’ll learn and build:
 
-## Recommended Browser Setup
+Vue 3 Fundamentals – templates, directives, loops, and conditional rendering  
+  
+Modern Components – props, events, slots, and reusable architecture  
+  
+Advanced Techniques – custom composables, smooth transitions, Drag & Drop  
+  
+Routing & State – SPAs with Vue Router and clean state management with Pinia  
+  
+TypeScript Integration – safer, more maintainable Vue code  
+  
+UI/UX – Optimistic UI patterns for a better user experience  
+  
+Custom Components – build a fully functional modal from scratch  
+  
+### Projects you’ll complete:  
+  
+Can You Drive?  
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Simple Quiz (your exercise project)  
 
-## Type Support for `.vue` Imports in TS
+Image Gallery  
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Task List  
 
-## Customize configuration
+Event Registration Mini-App  
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+User Settings App  
 
-## Project Setup
+Recipe Book App  
 
-```sh
-bun install
-```
+Trello Board App (Drag & Drop + Modals)  
 
-### Compile and Hot-Reload for Development
-
-```sh
-bun dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-bun run build
-```
+By the end, you’ll have 7 portfolio-ready apps and the confidence to build scalable, high-performance, production-grade applications with Vue 3 in any real-world environment. Enroll today!  
+  
+### What you’ll learn  
+Build modern, type-safe Vue 3 applications using Composition API and TypeScript.  
+Create 7 real-world applications to build a strong portfolio.  
+Develop scalable and reusable components with props, events, and slots.  
+Implement clean and efficient state management using Pinia.  
+Structure single-page applications (SPAs) with Vue Router, including dynamic routes.  
+Author custom composables to share reactive logic across your application.  
+Enhance user experience with transitions and Optimistic UI patterns.  
+Implement complex UI features like modals and Drag & Drop from scratch.  
+### Are there any course requirements or prerequisites?  
+Solid understanding of modern JavaScript (ES6+), including arrow functions, destructuring, modules, and async/await.  
+Basic knowledge of HTML and CSS.  
+Familiarity with the command line (terminal).  
+A code editor (like VS Code) and Node.js installed on your machine.  
+### Who this course is for:  
+JavaScript developers wanting to learn a modern front-end framework.  
+Developers with experience in other frameworks (like React or Angular) who want to quickly learn Vue 3.  
+Vue 2 developers looking to upgrade their skills to the Composition API and modern best practices.  
+Backend developers aiming to become full-stack developers.  
+Bootcamp graduates or junior developers who want to build a strong portfolio with practical, real-world projects.  
