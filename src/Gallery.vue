@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { createApp, ref } from 'vue';
+import type { Photo } from './types.ts';
 
 const newPhotoUrl = ref('');
 
-interface Photo {
-  id: number;
-  url: string;
-  isFavourite: boolean;
-}
-
-const addPhoto = function(event: Event) {
+const addPhoto = function(event: Event): void {
   event.preventDefault();
+
   console.log('I was clicked');
-  const photo = {
+
+  const photo: Photo = {
     id: photos.value.length + 1,
     url: newPhotoUrl.value,
     isFavourite: false,
@@ -24,10 +21,34 @@ const addPhoto = function(event: Event) {
   }
 }
 
-const photos = ref<Photo[]>([]);
-const toggleFavourite = function() {
-  // Adding photo logic here
+
+const photos = ref<Photo[]>([
+  {
+  id: 1,
+  url: 'https://images.unsplash.com/photo-1746950862687-3017c5818710?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  isFavourite: false,
+  },
+  {
+  id: 2,
+  url: 'https://images.unsplash.com/photo-1746950862687-3017c5818710?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  isFavourite: false,
+  },
+  {
+  id: 3,
+  url: 'https://images.unsplash.com/photo-1746950862687-3017c5818710?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  isFavourite: false,
+  },
+]);
+
+function toggleFavourite(photo: Photo): void {
+  photo.isFavourite = !photo.isFavourite;
+  console.log("isFavourite:", photo.isFavourite);
 }
+
+function removePhoto(index: number): void {
+  photos.value.splice(index, 1);
+}
+
 </script>
 
 <template>
@@ -37,8 +58,11 @@ const toggleFavourite = function() {
     <button type="submit" @click="addPhoto">Add Photo</button>
     <p class="no-photos" v-if="photos.length === 0">No photos added yet. Add some!</p>
     <div class="gallery" v-else>
-      <div class="photo">
-        <button class="favourite-button">⭐</button>
+      <div class="photo" v-for="(photo, index) in photos" :key="photo.id">
+        <img :src="photo.url">
+        <!-- with :class="{ favourite: photo.isFavourite }" we apply class favourite when it's true and disable it when is false -->
+        <button type="button" class="favourite-button" :class="{ favourite: photo.isFavourite }" @click="toggleFavourite(photo)">★</button>
+        <button type="button" class="remove-button" @click="removePhoto(index)">x</button>
       </div>
     </div>
   </form>
@@ -159,17 +183,40 @@ button[type='submit']:active {
   cursor: pointer;
   backdrop-filter: blur(6px);
   transition: transform 0.15s, background 0.2s;
+  color: #e6e6e6;
+}
+
+.remove-button {
+  position: absolute;
+  top: 0.55rem;
+  padding: 0.35rem 0.55rem;
+  border: none;
+  border-radius: 999px;
+  background: #ffffffd9;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: transform 0.15s, background 0.2s;
+  color: #e6e6e6;
+}
+
+.favourite-button { right: 0.55rem; }
+.remove-button    { left: 0.55rem; }
+
+.remove-button:hover {
+  background: #232833;
+  color: #fff;
 }
 
 .favourite-button:hover {
   background: #fff;
-  transform: scale(1.12);
 }
 
 @media (prefers-color-scheme: dark) {
   input {
     border-color: #333a45;
-    color: #e6e9ee;
+    color: #57595c;
   }
 
   .no-photos {
@@ -185,5 +232,10 @@ button[type='submit']:active {
   .favourite-button:hover {
     background: #232833;
   }
+}
+
+.favourite {
+  color: #ffff00;
+  background-color: #808000;
 }
 </style>

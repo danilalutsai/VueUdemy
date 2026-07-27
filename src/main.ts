@@ -1,6 +1,8 @@
 import './assets/main.css';
 
 import { createApp } from 'vue';
+import App from './App.vue';
 import Gallery from './Gallery.vue';
+import TaskManager from './TaskManager.vue';
 
-createApp(Gallery).mount('#app');
+createApp(TaskManager).mount('#app');
